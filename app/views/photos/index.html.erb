@@ -1,0 +1,14 @@
+<h1>Photos List</h1>
+<div class="row">
+	<% @images.each do |key, value| %>	
+	<div class="col-md-1">
+		<img src="<%= value[1] %>" class="img-responsive img-rounded">
+		<div class="votesPartial"><%= render :partial => 'votes_partial', :locals => { :votes => value[2] } %></div>
+		<div>
+			<button type="button" class="btn btn-default btn-xs">
+				<%= link_to "Vote Up", vote_up_path(:id => value[0]), :class => "voteUp", :method => 'post' %>
+			</button>
+		</div>
+	</div>	
+	<% end %>
+</div>
