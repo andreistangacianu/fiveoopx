@@ -10,7 +10,13 @@ gem 'oauth', '0.4.4'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'json'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+	gem 'sqlite3'
+end
+
+group :test, :production do
+    gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
