@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       )
 
   	session[:consumer] = consumer
-  	session[:request_token] = session[:consumer].get_request_token(:oauth_callback => "http://fiveoopx.dev/auth")
+  	session[:request_token] = session[:consumer].get_request_token(:oauth_callback => "http://fiveoopx.herokuapp.com/auth")
 
   	redirect_to session[:request_token].authorize_url
   end
